@@ -1,95 +1,58 @@
-import Image from 'next/image'
+'use client'
+import { useState } from 'react'
 import styles from './page.module.css'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 export default function Home() {
+  const router = useRouter()
+  const navigation = (name) => {
+    router.push(name)
+  }
+  const [name, setName] = useState('sharma')
+  let Apple = () => {
+    setName('Adarsh')
+  }
+
+  let FirstComponent = () => {
+    return (
+      <h4>first component</h4>
+    )
+  }
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+      {/*<User />*/}
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <p>Learning Next.js With {name}</p>
+      <button onClick={() => Apple()}>Click Me</button>
+      {/*<FirstComponent />*/}
+      {FirstComponent()}
+      <Link href="/login">Go to login-page</Link>
+      <br></br>
+      <br></br>
+      <Link href="/about">Go to About-page</Link>
+      <br></br>
+      <br></br>
+      <button onClick={() => navigation("/login")}>Go to login-page</button>
+      <br></br>
+      <br></br>
+      <button onClick={() => navigation("/about")}>Go to about-page</button>
+      <p>Normal-routing and Nested-routing</p>
     </main>
   )
 }
+// files based routing in next.js
+//i have using component under component
+//make a component-what is component-> the component is piace of code then using again by again.
+//given example
+
+// let User = (props) => {
+//   return (
+//     <div>
+//       <p>user component {props.name}</p>
+//     </div>
+//   )
+// }
+
+//Event, function, state discuss in next.js
+//state=>useState is React Hook that allows you to add state to a functional component.

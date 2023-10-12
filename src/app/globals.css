@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
@@ -104,4 +104,18 @@ a {
   html {
     color-scheme: dark;
   }
+} */
+
+.page_notfound{
+  margin: auto;
+  bottom: 20px;
+  width: 645px;  
+ 
+}
+
+.page_notfound h5{
+  color: red;
+  font-size: x-large;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
 }
