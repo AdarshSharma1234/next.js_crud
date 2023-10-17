@@ -37,7 +37,13 @@ export default function Home() {
       <br></br>
       <br></br>
       <button onClick={() => navigation("/about")}>Go to about-page</button>
-      <p>Normal-routing and Nested-routing</p>
+      <br></br>
+      <br></br>
+      <button onClick={() => navigation("/study")}>Go to study-page</button>
+
+      <br></br>
+      <br></br>
+      <Link href="/productlist">go to product_list</Link>
     </main>
   )
 }
